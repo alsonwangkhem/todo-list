@@ -8,7 +8,7 @@ import { Todos } from './components/Todos'
 function App() {
   const [todos, setTodos] = useState([]);
   function fetchTodos() {
-    axios.get("http://localhost:3000/todos")
+    axios.get("https://todo-list-xkc8.onrender.com/todos")
     .then(response => {
       setTodos(response.data);
     })
@@ -18,7 +18,7 @@ function App() {
   }, []);
 
   function addTodo(title, description) {
-    axios.post("http://localhost:3000/todo", {
+    axios.post("https://todo-list-xkc8.onrender.com/todo", {
       title: title,
       description: description
     })
@@ -28,7 +28,7 @@ function App() {
     })
   }
   function markCompletion(id) {
-    axios.put("http://localhost:3000/completed", {
+    axios.put("https://todo-list-xkc8.onrender.com/completed", {
       id: id
     })
     .then(() =>{
