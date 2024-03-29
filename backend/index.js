@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const PORT = process.env.PORT || 3000;
+
 app.post("/todo", async function(req, res) {
     const createPayload = req.body;
     const parsedPayload = createTodo.safeParse(createPayload);
@@ -59,4 +61,4 @@ app.put("/completed", async function(req, res) {
     })
 })
 
-app.listen(3000);
+app.listen(PORT);
